@@ -152,7 +152,7 @@ public class CheckoutPage
 		
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
-		File destination = new File("E:\\ExcelR\\Daily Notes-Selenium Java\\Screenshots\\orderstatuspage.jpeg");
+		File destination = new File("src\\main\\resources\\orderstatuspage.jpeg");
 		FileHandler.copy(src, destination);
 		
 	}

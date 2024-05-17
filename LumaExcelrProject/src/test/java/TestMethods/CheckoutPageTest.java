@@ -29,7 +29,7 @@ public class CheckoutPageTest
 		driver.manage().window().maximize();
 	}
 
-	@Test (priority =1, enabled=false)
+	@Test (priority =1, enabled=true)
 	public void testMethod() throws InterruptedException
 	{
 		HomePage hp = new HomePage(driver);
@@ -50,7 +50,7 @@ public class CheckoutPageTest
 		System.out.println("After Checkout: " +actualmessage);
 	}
 
-	@Test(enabled=false, dependsOnMethods="testMethod")
+	@Test(enabled=true, dependsOnMethods="testMethod")
 	public void purchaseOrder() throws InterruptedException
 	{
 		CheckoutPage cp = new CheckoutPage(driver);
@@ -58,14 +58,14 @@ public class CheckoutPageTest
 	}
 	
 
-	@Test(priority=2, enabled=false, dependsOnMethods="testMethod")
+	@Test(priority=2, enabled=true, dependsOnMethods="testMethod")
 	public void purchaseOrder2() throws InterruptedException
 	{
 		CheckoutPage cp = new CheckoutPage(driver);
 		cp.secondTimeOrderPurchase();
 	}
 	
-	@Test(priority=3,enabled = true)
+	@Test(priority=3, enabled = true)
 	public void orderStatusPage() throws InterruptedException, IOException
 	{
 		HomePage hp = new HomePage(driver);

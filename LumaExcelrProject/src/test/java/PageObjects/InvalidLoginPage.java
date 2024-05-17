@@ -27,7 +27,7 @@ public class InvalidLoginPage
 	//TC-11-Valid email id and invalid password
 	public void invalidLogin() throws IOException, InterruptedException
 	{
-		String filepath = "E:\\ExcelR\\Daily Notes-Selenium Java\\Excel Data\\InvalidLogin.xlsx";
+		String filepath = "src\\main\\resources\\InvalidLogin.xlsx";
 		FileInputStream fis = new FileInputStream(filepath); //reading the data from the sheet
 		XSSFWorkbook workbook = new XSSFWorkbook(fis); //going through the hierarchy and creating the workbook
 		XSSFSheet sheet = workbook.getSheet("TestData"); //sheet name
@@ -61,10 +61,11 @@ public class InvalidLoginPage
 			catch(Exception e) //handles invalid data
 			{
 				Thread.sleep(2000);
-				System.out.println("Invalid Data");
-				result.setCellValue("Invalid Input");
 			}
+			System.out.println("Invalid Data");
+			result.setCellValue("Invalid Input");
 		}
+		
 		fis.close();
 		
 		
